@@ -99,6 +99,6 @@ gaming_layer {
 &none  &none      &kp LALT  &kp LCTRL   &kp LSHFT &kp T     &none    &none  &none  &none     &none     &none     &none &none
                   &none     &none       &none     &kp ENTER &kp BSPC &none  &none  &none     &none     &none
             >;
-        }
+        };
     };
 };
