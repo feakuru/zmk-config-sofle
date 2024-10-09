@@ -65,7 +65,7 @@
             bindings = <
 &trans     &trans             &trans            &trans          &kp C_BRI_UP &trans                        &trans    &trans    &trans    &trans             &trans             &trans
 &trans     &trans             &kp C_MUTE        &kp C_VOL_DN    &kp C_VOL_UP &kp C_BRI_DN                  &kp PG_UP &kp PG_DN &kp HOME  &kp END            &kp PSCRN          &trans
-&trans     &trans             &kp LALT          &kp LCTRL       &kp LSHFT    &capsword                     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT          &kp LA(LC(T))      &trans
+&trans     &trans             &kp LALT          &kp LCTRL       &kp LSHFT    &caps_word                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT          &kp LA(LC(T))      &trans
 &trans     &kp LG(LS(PG_UP))  &kp LG(LS(PG_DN)) &kp LC(C)       &kp LC(V)    &kp CAPS      &trans  &trans  &kp TAB   &kp BSPC  &kp DEL   &kp LA(LC(LEFT))   &kp LA(LC(RIGHT))  &trans
                               &trans            &trans          &trans       &trans        &trans  &trans  &trans    &trans    &trans    &trans
             >;
