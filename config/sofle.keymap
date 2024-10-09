@@ -36,7 +36,7 @@
         };
 
         symnum_layer {
-            display-name = "sym num";
+            display-name = "symnum";
 // ------------------------------------------------------------------------------------------------------------
 // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |       |
 // |       |     |  `  |  '   |  [   |  ]   |                   |  7   |  8    |  9    |  F11 |  F12  |       |
@@ -55,7 +55,7 @@
         };
 
         sysnav_layer {
-            display-name = "sys nav";
+            display-name = "sysnav";
 // ------------------------------------------------------------------------------------------------------------
 // |       |      |      |       |       | bri+ |                |      |      |       |      |       |       |
 // |       |      | MUTE | vol-  | vol+  | bri- |                | PGUP | PGDN | HOME  | END  | PrSc  |       |
@@ -80,7 +80,7 @@
 // |        |         |         |         |         |         |                  |      |      |       |      |       |       |
 // |        |         |         |         |         |         |         | |      |      |      |       |      |       |       |
 //                    |         |         |         |         |         | |      |      |      |       |      |
-            display-name = "bt/mouse";
+            display-name = "btmouse";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                    &trans &trans    &trans    &trans    &trans &trans
 &trans      &trans        &trans        &trans          &trans          &trans                          &trans &mkp LCLK &mkp RCLK &mkp MCLK &trans &trans
