@@ -29,7 +29,7 @@
 &tog GAMING &kp Q  &kp W         &kp E          &kp R            &kp T                                       &kp Y            &kp U            &kp I           &kp O         &kp P    &tog MOUSEL
 &kp ESC     &kp A  &mt LALT S    &mt LCTRL D    &mt LSHIFT F     &kp G                                       &kp H            &mt RSHIFT J     &mt RCTRL K     &mt RALT L    &kp SEMI &kp K_APPLICATION
 &none       &kp Z  &kp X         &kp C          &kp V            &kp B              &kp C_MUTE    &none      &kp N            &kp M            &kp COMMA       &kp DOT       &kp FSLH &none
-                   &none         &none          &lt SYSNAV SPACE &lt SYMNUM ENTER   &kp LGUI      &kp BSPC   &lt SYSNAV SPACE &lt SYSNAV SPACE &none           &none
+                   &none         &none          &none            &lt SYMNUM ENTER   &kp LGUI      &kp BSPC   &lt SYSNAV SPACE &none            &none           &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -44,11 +44,11 @@
 // |       |     |  _  |  +   |  \   |  /   |        |  |       |  1   |  2    |  3    |  .   |       |       |
 //               |     |      |      |      |        |  |       |  0   |       |       |      |
             bindings = <
-&trans    &kp F1    &kp F2         &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8  &kp F9    &kp F10   &trans
-&trans    &trans    &kp GRAVE      &kp N3      &kp N4    &kp N5                    &kp N7    &kp N8   &kp N9  &kp F11   &kp F12   &trans
-&trans    &trans    &kp MINUS      &kp EQUAL   &kp SEMI  &kp COLON                 &kp N4    &kp N5   &kp N6  &kp COMMA &trans    &trans
-&trans    &trans    &kp UNDERSCORE &kp PLUS    &kp BSLH  &kp FSLH   &trans &trans  &kp N1    &kp N2   &kp N3  &kp DOT   &trans    &trans
-                    &trans         &trans      &trans    &trans     &trans &kp N0  &kp N0    &trans   &trans  &trans
+&trans    &kp F1    &kp F2         &kp F3            &kp F4           &kp F5                    &kp F6    &kp F7          &kp F8        &kp F9         &kp F10   &trans
+&trans    &trans    &kp GRAVE      &kp APOS          &kp LBKT         &kp RBKT                  &kp N7    &kp N8          &kp N9        &kp F11        &kp F12   &trans
+&trans    &trans    &mt LALT MINUS &mt LCTRL EQUAL   &mt LSHIFT SEMI  &kp COLON                 &kp N4    &mt RSHIFT N5   &mt RCTRL N6  &mt RALT COMMA &trans    &trans
+&trans    &trans    &kp UNDERSCORE &kp PLUS          &kp BSLH         &kp FSLH   &trans &trans  &kp N1    &kp N2          &kp N3        &kp DOT        &trans    &trans
+                    &trans         &trans            &trans           &trans     &trans &kp N0  &kp N0    &trans          &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -63,7 +63,7 @@
 // |       | mprw | mnxw | COPY  | PASTE | CAPS |      |  |      | TAB  | BSPC |  DEL  | prevw| nextw |       |
 //                |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&trans     &trans             &trans            &trans          &kp C_BRI_UP &trans                        &trans    &trans    &trans    &trans             &trans             &trans
+&trans     &trans             &trans            &trans          &trans       &kp C_BRI_UP                  &trans    &trans    &trans    &trans             &trans             &trans
 &trans     &trans             &kp C_MUTE        &kp C_VOL_DN    &kp C_VOL_UP &kp C_BRI_DN                  &kp PG_UP &kp PG_DN &kp HOME  &kp END            &kp PSCRN          &trans
 &trans     &trans             &kp LALT          &kp LCTRL       &kp LSHFT    &caps_word                    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT          &kp LA(LC(T))      &trans
 &trans     &kp LG(LS(PG_UP))  &kp LG(LS(PG_DN)) &kp LC(C)       &kp LC(V)    &kp CAPS      &trans  &trans  &kp TAB   &kp BSPC  &kp DEL   &kp LA(LC(LEFT))   &kp LA(LC(RIGHT))  &trans
