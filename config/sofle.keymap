@@ -32,7 +32,7 @@
                    &kp LALT      &kp LCTRL      &kp LSHIFT       &lt SYMNUM ENTER   &kp LGUI      &kp BSPC   &lt SYSNAV SPACE &kp RSHIFT       &kp RCTRL       &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         symnum_layer {
@@ -51,7 +51,7 @@
                     &trans         &trans            &trans           &trans     &trans &kp N0  &kp N0    &trans          &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         sysnav_layer {
@@ -70,7 +70,7 @@
                               &trans            &trans          &trans       &trans        &trans  &trans  &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         mouse_layer {
