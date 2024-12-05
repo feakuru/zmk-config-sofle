@@ -58,7 +58,7 @@
 &trans    &trans    &kp GRAVE        &kp APOS          &kp LBKT         &kp RBKT                  &kp N7    &kp N8          &kp N9        &kp F11          &kp F12   &trans
 &trans    &trans    &bhm LALT MINUS  &bhm LCTRL EQUAL  &bhm LSHIFT SEMI &kp COLON                 &kp N4    &bhm RSHIFT N5  &bhm RCTRL N6 &bhm RALT COMMA  &trans    &trans
 &trans    &trans    &kp UNDERSCORE   &kp PLUS          &kp BSLH         &kp FSLH   &trans &trans  &kp N1    &kp N2          &kp N3        &kp DOT          &trans    &trans
-                    &trans           &trans            &trans           &trans     &trans &kp N0  &kp N0    &trans          &trans        &trans
+                    &trans           &trans            &trans           &trans     &trans &trans  &kp N0    &trans          &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
