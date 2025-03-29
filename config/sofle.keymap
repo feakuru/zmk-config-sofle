@@ -11,11 +11,12 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define BASE 0
-#define SYMNUM 1
-#define SYSNAV 2
-#define MOUSEL 3
-#define GAMING 4
+#define BASE      0
+#define SYMNUM    1
+#define SYSNAV    2
+#define MOUSEL    3
+#define GAMING_1  4
+#define GAMING_2  5
 
 / {
     behaviors {
@@ -37,13 +38,13 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "main";
+            display-name = "feakuru";
             bindings = <
-&kp ESC      &kp N1  &kp N2       &kp N3        &kp N4         &kp N5                                          &kp N6            &kp N7         &kp N8        &kp N9       &kp N0    &none
-&tog GAMING  &kp Q   &kp W        &kp E         &kp R          &kp T                                           &kp Y             &kp U          &kp I         &kp O        &kp P     &tog MOUSEL
-&kp ESC      &kp A   &bhm LALT S  &bhm LCTRL D  &bhm LSHIFT F  &kp G                                           &kp H             &bhm RSHIFT J  &bhm RCTRL K  &bhm RALT L  &kp SEMI  &kp K_APPLICATION
-&none        &kp Z   &kp X        &kp C         &kp V          &kp B             &kp C_MUTE  &kp HOME          &kp N             &kp M          &kp COMMA     &kp DOT      &kp FSLH  &none
-                     &kp LALT     &kp LCTRL     &kp LSHIFT     &lt SYMNUM ENTER  &kp LGUI    &bhm RSHIFT BSPC  &lt SYSNAV SPACE  &kp RSHIFT     &kp RCTRL     &kp RALT
+&kp ESC        &kp N1  &kp N2       &kp N3        &kp N4         &kp N5                                          &kp N6            &kp N7         &kp N8        &kp N9       &kp N0    &none
+&tog GAMING_1  &kp Q   &kp W        &kp E         &kp R          &kp T                                           &kp Y             &kp U          &kp I         &kp O        &kp P     &tog MOUSEL
+&kp ESC        &kp A   &bhm LALT S  &bhm LCTRL D  &bhm LSHIFT F  &kp G                                           &kp H             &bhm RSHIFT J  &bhm RCTRL K  &bhm RALT L  &kp SEMI  &kp K_APPLICATION
+&none          &kp Z   &kp X        &kp C         &kp V          &kp B             &kp C_MUTE  &kp HOME          &kp N             &kp M          &kp COMMA     &kp DOT      &kp FSLH  &none
+                       &kp LALT     &kp LCTRL     &kp LSHIFT     &lt SYMNUM ENTER  &kp LGUI    &bhm RSHIFT BSPC  &lt SYSNAV SPACE  &kp RSHIFT     &kp RCTRL     &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
@@ -84,14 +85,25 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
-gaming_layer {
-            display-name = "gaming";
+gaming_1_layer {
+            display-name = "game 1";
             bindings = <
-&trans &trans     &trans    &kp F3      &trans    &kp F5                    &trans &trans    &trans    &trans    &trans &trans
-&trans &kp R      &kp Q     &kp W       &kp E     &kp TAB                   &trans &mkp LCLK &mkp RCLK &mkp MCLK &trans &trans
-&trans &kp F      &kp A     &kp S       &kp D     &kp SPACE                 &trans &trans    &trans    &trans    &trans &trans
-&trans &trans     &kp LALT  &kp LCTRL   &kp LSHFT &kp T     &trans   &trans &trans &trans    &trans    &trans    &trans &trans
-                  &trans    &trans      &trans    &kp ENTER &kp BSPC &trans &trans &trans    &trans    &trans
+&trans  &trans  &trans    &kp F3     &kp F5     &kp F8                              &trans  &trans          &trans          &trans        &trans           &trans
+&trans  &kp G   &kp Q     &kp W      &kp E      &kp TAB                             &trans  &mkp LCLK       &mkp RCLK       &mkp MCLK     &trans           &trans  &trans
+&trans  &kp B   &kp A     &kp S      &kp D      &kp SPACE                           &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &kp LALT  &kp LCTRL  &kp LSHFT  &kp T               &trans  &trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+                &trans    &trans     &trans     &lt GAMING_2 ENTER  &trans  &trans  &trans  &trans          &trans          &trans
+            >;
+        };
+
+gaming_2_layer {
+            display-name = "game 2";
+            bindings = <
+&trans  &trans  &trans    &kp F3     &kp F5     &kp F8                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp R     &kp UP     &kp F      &kp I                   &kp N7  &kp N8  &kp N9  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT  &kp DOWN   &kp RIGHT  &kp J                   &kp N4  &kp N5  &kp N6  &trans  &trans  &trans  &trans
+&trans  &trans  &kp X     &kp C      &kp K      &trans  &trans  &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans  &trans
+                &trans    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
