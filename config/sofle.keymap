@@ -89,11 +89,11 @@
         mouse_layer {
             display-name = "btmouse";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                   &trans          &trans          &trans          &trans           &trans  &trans
-&trans      &trans        &mkp MCLK     &mkp LCLK     &mkp RCLK     &trans                                         &trans          &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &mmv MOVE_UP    &mmv MOVE_LEFT   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
-                          &trans        &trans        &trans        &trans        &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans          &trans          &trans          &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   &trans          &trans          &trans          &trans           &trans  &trans
+&trans      &trans        &mkp MCLK     &mkp LCLK     &mkp RCLK     &trans                         &trans          &mkp LCLK       &mkp RCLK       &mkp MCLK        &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
+                          &trans        &trans        &trans        &trans        &trans  &trans   &trans          &trans          &trans          &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
