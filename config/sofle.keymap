@@ -120,8 +120,6 @@ gaming_2_layer {
                    &trans       &trans        &trans        &trans  &trans  &kp N0  &trans  &trans  &trans  &trans
             >;
         };
-    };
-};
 
 gaming_3_layer {
             display-name = "game 3";
@@ -133,3 +131,5 @@ gaming_3_layer {
                 &trans    &trans   &trans   &kp N0  &trans  &trans  &trans &trans &trans &trans
             >;
         };
+    };
+};
