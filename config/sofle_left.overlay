@@ -1,0 +1,4 @@
+&left_encoder {
+    status = "okay";
+    sensor-bindings = <&emm_lr>;
+};

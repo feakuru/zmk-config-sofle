@@ -70,13 +70,6 @@
         };
     };
 
-    &encoder_left {
-        sensor-bindings = <&emm_lr>;
-    };
-
-    &encoder_right {
-        sensor-bindings = <&emm_ud>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
