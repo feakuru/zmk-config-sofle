@@ -47,23 +47,23 @@
             bindings = <&kp>, <&kp>;
         };
 
-        emm_ud: encoders_move_mouse {
+        emm_ud: encoders_move_mouse_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
         };
-        emm_lr: encoders_move_mouse {
+        emm_lr: encoders_move_mouse_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
         };
 
-        esm_ud: encoders_scroll_mouse {
+        esm_ud: encoders_scroll_mouse_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };
-        esm_lr: encoders_scroll_mouse {
+        esm_lr: encoders_scroll_mouse_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
