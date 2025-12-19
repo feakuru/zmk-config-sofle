@@ -46,6 +46,28 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+
+        emm_ud: encoders_move_mouse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+        };
+        emm_lr: encoders_move_mouse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
+        };
+
+        esm_ud: encoders_scroll_mouse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+        esm_lr: encoders_scroll_mouse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+        };
     };
 
     keymap {
@@ -60,7 +82,7 @@
 &none          &kp Z   &kp X        &kp C         &kp V          &kp B             &kp C_MUTE  &kp HOME          &kp N             &kp M          &kp COMMA     &kp DOT      &kp FSLH  &none
                        &kp LALT     &kp LCTRL     &kp LSHIFT     &lt SYMNUM ENTER  &kp LGUI    &bhm RSHIFT BSPC  &lt SYSNAV SPACE  &kp RSHIFT     &kp RCTRL     &kp RALT
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&emm_lr &emm_ud>;
         };
 
         symnum_layer {
@@ -72,7 +94,7 @@
 &trans  &trans  &kp UNDERSCORE   &kp PLUS          &kp BSLH          &kp FSLH   &trans  &trans  &kp N1         &kp N2          &kp N3         &kp DOT          &trans   &trans
                 &trans           &trans            &trans            &trans     &trans  &trans  &lt SYSNAV N0  &trans          &trans         &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&esm_lr &esm_ud>;
         };
 
         sysnav_layer {
@@ -84,7 +106,7 @@
 &trans  &kp LG(LS(PG_UP))  &kp LG(LS(PG_DN))  &kp LC(C)     &kp LC(V)     &kp CAPS      &trans  &trans  &kp TAB    &kp BSPC   &kp DEL   &kp LA(LC(LEFT))   &kp LA(LC(RIGHT))  &trans
                            &trans             &trans        &trans        &trans        &trans  &trans  &trans     &trans     &trans    &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB)) &inc_dec_kp PG_DN PG_UP>;
         };
 
         mouse_layer {
@@ -96,7 +118,7 @@
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
                           &trans        &trans        &trans        &trans        &trans  &trans   &trans          &trans          &trans          &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&emm_lr &emm_ud>;
         };
 
 gaming_1_layer {
@@ -108,6 +130,7 @@ gaming_1_layer {
 &kp Z        &kp Z   &kp LALT  &kp LCTRL  &kp LSHFT  &kp T        &trans       &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
                      &trans    &trans     &trans     &mo GAMING_2 &mo GAMING_3 &trans  &trans          &trans          &trans          &trans
             >;
+            sensor-bindings = <&emm_lr &emm_ud>;
         };
 
 gaming_2_layer {
@@ -120,6 +143,7 @@ gaming_2_layer {
                    &trans    &trans    &trans     &trans  &trans  &trans  &kp N0  &trans  &trans  &trans
             >;
         };
+            sensor-bindings = <&esm_lr &esm_ud>;
 
 gaming_3_layer {
             display-name = "game 3";
