@@ -121,7 +121,7 @@
             sensor-bindings = <&emm_lr &emm_ud>;
         };
 
-gaming_1_layer {
+        gaming_1_layer {
             display-name = "game 1";
             bindings = <
 &kp LS(TAB)  &kp F2  &kp F3    &kp F5     &kp F7     &kp F8                            &trans          &trans          &trans          &trans           &trans  &trans
@@ -133,7 +133,7 @@ gaming_1_layer {
             sensor-bindings = <&emm_lr &emm_ud>;
         };
 
-gaming_2_layer {
+        gaming_2_layer {
             display-name = "game 2";
             bindings = <
 &trans  &trans     &trans    &trans    &trans     &trans                  &trans  &trans  &trans  &trans  &trans  &trans
@@ -142,10 +142,10 @@ gaming_2_layer {
 &trans  &kp V      &kp X     &kp C     &kp K      &kp M   &trans  &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans
                    &trans    &trans    &trans     &trans  &trans  &trans  &kp N0  &trans  &trans  &trans
             >;
-        };
             sensor-bindings = <&esm_lr &esm_ud>;
+        };
 
-gaming_3_layer {
+        gaming_3_layer {
             display-name = "game 3";
             bindings = <
 &trans  &trans  &trans    &trans   &trans   &trans                  &trans &trans &trans &trans &trans &trans
