@@ -38,8 +38,8 @@
 };
 
 &sensors { triggers-per-rotation = <30>; };
-&left_encoder { steps = <30>; };
-&right_encoder { steps = <30>; };
+&left_encoder { steps = <60>; };
+&right_encoder { steps = <60>; };
 
 / {
     behaviors {
@@ -51,37 +51,25 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-        mm_ud: mm_ud {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
+        mouse_encoder: sensor_rotate_mmv {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&mmv>, <&mmv>;
             tap-ms = <30>;
-            bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
         };
-        mm_lr: mm_lr {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
+        scroll_encoder: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
             tap-ms = <30>;
-            bindings = <&mmv MOVE_LEFT>, <&mmv MOVE_RIGHT>;
         };
-        ms_ud: ms_ud {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
+        mmm_test: mmm_test_whatever {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
             tap-ms = <30>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        };
-        ms_lr: ms_lr {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            tap-ms = <30>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-        };
-        mmm_test: mmm_test {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp UP>, <&kp DOWN>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -95,10 +83,9 @@
 &none          &kp Z   &kp X        &kp C         &kp V          &kp B             &mkp LCLK   &mkp RCLK         &kp N             &kp M          &kp COMMA     &kp DOT      &kp FSLH  &none
                        &kp LALT     &kp LCTRL     &kp LSHIFT     &lt SYMNUM ENTER  &kp LGUI    &bhm RSHIFT BSPC  &lt SYSNAV SPACE  &kp RSHIFT     &kp RCTRL     &kp RALT
             >;
-            sensor-bindings = <
-                &mm_ud
-                &mm_lr
-            >;
+            sensor-bindings =
+                <&mouse_encoder MOVE_RIGHT MOVE_LEFT>,
+                <&mouse_encoder MOVE_DOWN MOVE_UP>;
         };
 
         symnum_layer {
@@ -110,10 +97,9 @@
 &trans  &trans  &kp UNDERSCORE   &kp PLUS          &kp BSLH          &kp FSLH   &trans  &mkp MCLK  &kp N1         &kp N2          &kp N3         &kp DOT          &trans   &trans
                 &trans           &trans            &trans            &trans     &trans  &trans     &lt SYSNAV N0  &trans          &trans         &trans
             >;
-            sensor-bindings = <
-                &ms_ud
-                &ms_lr
-            >;
+            sensor-bindings = 
+                <&scroll_encoder SCRL_DOWN SCRL_UP>,
+                <&scroll_encoder SCRL_DOWN SCRL_UP>;
         };
 
         sysnav_layer {
@@ -125,10 +111,9 @@
 &trans  &kp LG(LS(PG_UP))  &kp LG(LS(PG_DN))  &kp LC(C)     &kp LC(V)     &kp CAPS      &trans  &trans  &kp TAB    &kp BSPC   &kp DEL   &kp LA(LC(LEFT))   &kp LA(LC(RIGHT))  &trans
                            &trans             &trans        &trans        &trans        &trans  &trans  &trans     &trans     &trans    &trans
             >;
-            sensor-bindings = <
-                &inc_dec_kp LC(TAB) LC(LS(TAB))
-                &inc_dec_kp PG_DN PG_UP
-            >;
+            sensor-bindings = 
+                <&inc_dec_kp LC(TAB) LC(LS(TAB))>,
+                <&inc_dec_kp PG_DN PG_UP>;
         };
 
         mouse_layer {
@@ -140,10 +125,9 @@
 &trans      &trans        &trans        &trans        &trans        &trans        &trans  &trans   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
                           &trans        &trans        &trans        &trans        &trans  &trans   &trans          &trans          &trans          &trans
             >;
-            sensor-bindings = <
-                &mm_ud
-                &mm_lr
-            >;
+            sensor-bindings = 
+                <&scroll_encoder SCRL_DOWN SCRL_UP>,
+                <&scroll_encoder SCRL_DOWN SCRL_UP>;
         };
 
         gaming_1_layer {
@@ -155,10 +139,9 @@
 &kp Z        &kp Z   &kp LALT  &kp LCTRL  &kp LSHFT  &kp T        &trans       &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &trans  &trans
                      &trans    &trans     &trans     &mo GAMING_2 &mo GAMING_3 &trans  &trans          &trans          &trans          &trans
             >;
-            sensor-bindings = <
-                &mm_ud
-                &mm_lr
-            >;
+            sensor-bindings = 
+                <&scroll_encoder SCRL_DOWN SCRL_UP>,
+                <&scroll_encoder SCRL_DOWN SCRL_UP>;
         };
 
         gaming_2_layer {
@@ -170,10 +153,9 @@
 &trans  &kp V      &kp X     &kp C     &kp K      &kp M   &trans  &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans
                    &trans    &trans    &trans     &trans  &trans  &trans  &kp N0  &trans  &trans  &trans
             >;
-            sensor-bindings = <
-                &ms_ud
-                &ms_lr
-            >;
+            sensor-bindings = 
+                <&scroll_encoder SCRL_DOWN SCRL_UP>,
+                <&scroll_encoder SCRL_DOWN SCRL_UP>;
         };
 
         gaming_3_layer {
@@ -185,10 +167,9 @@
 &trans  &kp N   &kp N1    &kp N2   &kp N3   &kp H   &trans  &trans  &trans &trans &trans &trans &trans &trans
                 &kp N0    &trans   &trans   &kp N0  &trans  &trans  &trans &trans &trans &trans
             >;
-            sensor-bindings = <
-                &mmm_test
-                &mmm_test
-            >;
+            sensor-bindings = 
+                <&mmm_test DOWN UP>,
+                <&mmm_test LEFT RIGHT>;
         };
     };
 };
